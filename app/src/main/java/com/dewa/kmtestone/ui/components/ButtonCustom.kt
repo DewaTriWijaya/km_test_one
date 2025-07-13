@@ -9,10 +9,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
+import com.dewa.kmtestone.R
 
 @Composable
-fun ButtonCustom(name: String, onClick: () -> Unit,) {
+fun ButtonCustom(name: String, onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = Modifier
@@ -25,6 +28,6 @@ fun ButtonCustom(name: String, onClick: () -> Unit,) {
             contentColor = Color.White
         )
     ) {
-        Text(name)
+        Text(name, fontFamily = FontFamily(Font(R.font.poppins_medium)))
     }
 }

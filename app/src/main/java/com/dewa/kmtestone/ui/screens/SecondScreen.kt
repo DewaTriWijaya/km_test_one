@@ -5,39 +5,35 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowLeft
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.dewa.kmtestone.R
+import com.dewa.kmtestone.ui.components.AppBarCustom
 import com.dewa.kmtestone.ui.components.ButtonCustom
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SecondScreen(
+    modifier: Modifier = Modifier,
     name: String,
     username: String = "Selected User Name",
-    modifier: Modifier = Modifier,
     navController: NavController
 ) {
     Scaffold(
-        topBar = { AppBarSecondScreen(navController) }
+        topBar = { AppBarCustom("Second Screen", navController) }
     ) { innerPadding ->
         Column(
             modifier = modifier
@@ -65,53 +61,33 @@ fun ContentSecondScreen(
             .padding(16.dp)
     ) {
         Column {
-            Text("Welcome")
-            Text(name)
+            Text(
+                text = "Welcome",
+                fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                color = Color.Black
+            )
+            Text(
+                text = name,
+                fontFamily = FontFamily(Font(R.font.poppins_semi_bold)),
+                color = Color.Black,
+                fontSize = 24.sp
+            )
         }
 
         Text(
             text = username,
             textAlign = TextAlign.Center,
+            color = Color.Black,
+            fontFamily = FontFamily(Font(R.font.poppins_semi_bold)),
             fontSize = 24.sp,
             modifier = Modifier
                 .fillMaxWidth()
         )
 
-        ButtonCustom("Choose a User"){
+        ButtonCustom("Choose a User") {
             navController.navigate("third")
         }
     }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun AppBarSecondScreen(
-    navController: NavController
-) {
-    CenterAlignedTopAppBar(
-        title = {
-            Text(
-                text = "Second Screen",
-                color = Color.Black,
-                textAlign = TextAlign.Center
-            )
-        },
-        navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() } ) {
-                Icon(
-                    imageVector = Icons.Default.KeyboardArrowLeft,
-                    contentDescription = "back",
-                    tint = Color(0xFF554AF0),
-                    modifier = Modifier
-                        .height(50.dp)
-                        .width(50.dp)
-                )
-            }
-        },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = Color.White
-        )
-    )
 }
 
 

@@ -40,12 +40,12 @@ fun RetryFooter(onRetry: () -> Unit) = Row(
         .padding(16.dp),
     horizontalArrangement = Arrangement.Center
 ) {
-    Button(onClick = onRetry) { Text("Coba lagi") }
+    Button(onClick = onRetry) { Text("Try Again") }
 }
 
 @Composable
 fun ErrorFull(
-    message: String = "Terjadi kesalahan saat memuat data.",
+    message: String = "An error occurred while loading data.",
     onRetry: () -> Unit
 ) {
     Box(
@@ -63,7 +63,7 @@ fun ErrorFull(
             )
             Spacer(modifier = Modifier.height(12.dp))
             Button(onClick = onRetry) {
-                Text("Coba Lagi")
+                Text("Try Again")
             }
         }
     }
