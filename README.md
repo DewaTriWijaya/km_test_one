@@ -50,3 +50,5 @@ Berikut adalah langkah-langkah untuk menginstal dan menjalankan aplikasi ini di 
     - Pilih perangkat target.
     - Klik tombol 'Run' atau gunakan shortcut `Shift + F10`.
 
+Link Drive
+https://drive.google.com/drive/folders/1dmfhHC78qqPXEYhdOJvBs64_EaNMDM-F?usp=sharing
