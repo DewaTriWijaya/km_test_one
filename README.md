@@ -3,7 +3,7 @@
 ## Daftar Isi
 1. [Pendahuluan](#pendahuluan)
 2. [Library yang Digunakan](#library-yang-digunakan)
-3. [Fitur Utama](#fitur-utama)
+3. [Fitur Utama](#fitur-pengguna)
 4. [Teknologi yang Digunakan](#teknologi-yang-digunakan)
 5. [Cara Instalasi](#cara-instalasi)
 
