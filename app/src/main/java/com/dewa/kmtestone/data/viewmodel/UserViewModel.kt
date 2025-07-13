@@ -6,9 +6,10 @@ import androidx.paging.cachedIn
 import com.dewa.kmtestone.data.datasource.UserRepository
 
 class UserViewModel(
-    repo: UserRepository = UserRepository()
+    repository: UserRepository = UserRepository()
 ) : ViewModel() {
 
-    val users = repo.getUsersStream()
+    val users = repository.getUsersStream()
         .cachedIn(viewModelScope)
+
 }

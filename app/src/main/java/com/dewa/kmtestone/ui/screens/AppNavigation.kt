@@ -12,8 +12,8 @@ import androidx.navigation.navArgument
 fun AppNavigation() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "home", modifier = Modifier) {
-        composable("home") { FirstScreen(navController) }
+    NavHost(navController = navController, startDestination = "first", modifier = Modifier) {
+        composable("first") { FirstScreen(navController) }
         composable(
             "second/{name}",
             arguments = listOf(navArgument("name") { type = NavType.StringType })

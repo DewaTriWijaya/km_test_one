@@ -31,7 +31,7 @@ fun ThirdScreen(
     navController: NavController
 ) {
     Scaffold(
-        topBar = { AppBarCustom("Third Screen", navController) }
+        topBar = { AppBarCustom("Third Screen", onClick = { navController.popBackStack() }) }
     ) { innerPadding ->
         Column(
             modifier = modifier

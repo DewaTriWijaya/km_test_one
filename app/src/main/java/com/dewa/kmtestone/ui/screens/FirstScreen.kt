@@ -32,7 +32,7 @@ import com.dewa.kmtestone.utils.Utils.isPalindrome
 @Composable
 fun FirstScreen(
     navController: NavController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
     var name by remember { mutableStateOf("") }

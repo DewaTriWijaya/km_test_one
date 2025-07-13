@@ -30,10 +30,10 @@ fun SecondScreen(
     modifier: Modifier = Modifier,
     name: String,
     username: String = "Selected User Name",
-    navController: NavController
+    navController: NavController,
 ) {
     Scaffold(
-        topBar = { AppBarCustom("Second Screen", navController) }
+        topBar = { AppBarCustom("Second Screen", onClick = { navController.navigate("first") }) }
     ) { innerPadding ->
         Column(
             modifier = modifier
@@ -89,7 +89,6 @@ fun ContentSecondScreen(
         }
     }
 }
-
 
 @Preview(Devices.PIXEL)
 @Composable

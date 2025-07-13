@@ -18,14 +18,13 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.dewa.kmtestone.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppBarCustom(
     nameBar: String,
-    navController: NavController
+    onClick: () -> Unit
 ) {
     CenterAlignedTopAppBar(
         title = {
@@ -37,7 +36,7 @@ fun AppBarCustom(
             )
         },
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(onClick = onClick ) {
                 Icon(
                     imageVector = Icons.Default.KeyboardArrowLeft,
                     contentDescription = "back",
